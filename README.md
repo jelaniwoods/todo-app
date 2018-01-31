@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+TODO need to fix creating a todo, b/c rn it doesn't actually create it
+TODO also save data in a cookie
 ## Build Setup
 
 ``` bash
