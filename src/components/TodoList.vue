@@ -1,15 +1,20 @@
 <template>
   <div>
-    <ul>
-      <li> Todo A </li>
-      <li> Todo B </li>
-      <li> Todo C </li>
-    </ul>
+    <p>Completed Tasks: {{todos.filter(todo => {return todo.done === true}).length}}</p>
+    <p>Pending Tasks: {{todos.filter(todo => {return todo.done === false}).length}}</p>
+   // we are now passing the data to the todo component to render the todo list
+    <todo  v-for="todo in todos" v-bind:todo="todo"></todo>
   </div>
 </template>
 
 <script type = "text/javascript" >
-  export default {}
-</script>
 
-<style></style>
+import Todo from './Todo';
+
+export default {
+  props: ['todos'],
+  components: {
+    Todo,
+  },
+};
+</script>
